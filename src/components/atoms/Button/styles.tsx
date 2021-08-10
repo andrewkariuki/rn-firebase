@@ -11,6 +11,6 @@ export default StyleSheet.create({
     justifyContent: "center",
   },
   text: {
-    color: "#06040A",
+    color: "#ffff",
   },
 });

@@ -1,11 +1,11 @@
 import React from "react";
-import { View } from "react-native";
+import { RegisterContainer } from "../../containers";
 
 interface RegisterScreenProps {
-  navigation: any;
+  navigation?: any;
 }
 
 const RegisterScreen: React.FC<RegisterScreenProps> = ({}) => {
-  return <View />;
+  return <RegisterContainer />;
 };
 export default RegisterScreen;

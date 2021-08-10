@@ -11,7 +11,11 @@ const Navigation: React.FC<NavigationProps> = ({}) => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="register" component={RegisterScreen} />
+        <Stack.Screen
+          name="register"
+          component={RegisterScreen}
+          options={{ headerShown: false }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
