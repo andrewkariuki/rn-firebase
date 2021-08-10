@@ -1,7 +1,5 @@
-<div align="center"><img src="https://res.cloudinary.com/appruut/image/upload/v1626634058/appruut/appruut.jpg" width="100px" height="100px"></div>
-
 <div align="center">
-<h2>Node.js Logger</h2>
+<h2>React Native + Firebase</h2>
 <p>Logging made easier in node.js</p>
 <div>
 
@@ -22,3 +20,4 @@
 
 [typescript-image]: https://img.shields.io/badge/Typescript-294E80.svg?style=for-the-badge&logo=typescript
 [typescript-url]:  "typescript"
+
