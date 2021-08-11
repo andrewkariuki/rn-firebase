@@ -4,9 +4,14 @@ import style from "./styles";
 
 interface LinkProps {
   text?: string;
+  navigation?: any;
 }
 
-const Link: React.FC<LinkProps> = ({ text }) => {
-  return <Text style={style.link}>{text}</Text>;
+const Link: React.FC<LinkProps> = ({ text, navigation }) => {
+  return (
+    <Text style={style.link} onPress={() => navigation.navigate("login")}>
+      {text}
+    </Text>
+  );
 };
 export default Link;

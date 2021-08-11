@@ -5,7 +5,7 @@ interface RegisterScreenProps {
   navigation?: any;
 }
 
-const RegisterScreen: React.FC<RegisterScreenProps> = ({}) => {
-  return <RegisterContainer />;
+const RegisterScreen: React.FC<RegisterScreenProps> = ({ navigation }) => {
+  return <RegisterContainer navigation={navigation} />;
 };
 export default RegisterScreen;

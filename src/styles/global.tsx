@@ -4,7 +4,11 @@ export const globalStyles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     width: "100%",
-    flexDirection: "row",
-    justifyContent: "center",
+    height: "100%",
+    // flexDirection: "row",
+    // justifyContent: "center",
+  },
+  body: {
+    backgroundColor: "#E0E0E0",
   },
 });

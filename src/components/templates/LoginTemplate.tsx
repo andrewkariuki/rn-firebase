@@ -3,13 +3,13 @@ import { View } from "react-native";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { globalStyles } from "../../styles";
 import { AuthHeading } from "../molecules";
-import { RegistrationForm } from "../organisms";
+import { LoginForm } from "../organisms";
 
-interface RegisterTemplateProps {
-  navigation: any;
+interface LoginTemplateProps {
+  navigation?: any;
 }
 
-const RegisterTemplate: React.FC<RegisterTemplateProps> = ({ navigation }) => {
+const LoginTemplate: React.FC<LoginTemplateProps> = ({ navigation }) => {
   return (
     <View style={globalStyles.container}>
       <KeyboardAwareScrollView
@@ -17,11 +17,11 @@ const RegisterTemplate: React.FC<RegisterTemplateProps> = ({ navigation }) => {
         keyboardShouldPersistTaps="always">
         <AuthHeading
           topText="Welcome to Wehv!"
-          subText="Register, share your experiences anonymously."
+          subText="Login, share your experiences anonymously."
         />
-        <RegistrationForm navigation={navigation} />
+        <LoginForm navigation={navigation} />
       </KeyboardAwareScrollView>
     </View>
   );
 };
-export default RegisterTemplate;
+export default LoginTemplate;

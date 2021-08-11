@@ -1,21 +1,30 @@
 import React from "react";
-import { NavigationContainer } from "@react-navigation/native";
+import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import { RegisterScreen } from "../../screens";
+import { LoginScreen, RegisterScreen } from "../../screens";
 
 interface NavigationProps {}
 
 const Stack = createStackNavigator();
 
+const theme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    border: "transparent",
+  },
+};
+
 const Navigation: React.FC<NavigationProps> = ({}) => {
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          name="register"
-          component={RegisterScreen}
-          options={{ headerShown: false }}
-        />
+    <NavigationContainer theme={theme}>
+      <Stack.Navigator
+        screenOptions={{
+          headerShown: false,
+        }}
+        initialRouteName={"SignUp"}>
+        <Stack.Screen name="SignUp" component={RegisterScreen} />
+        <Stack.Screen name="SignIn" component={LoginScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
