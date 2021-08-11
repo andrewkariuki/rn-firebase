@@ -1,0 +1,62 @@
+name: Build Android Ad Hoc
+
+on:
+  workflow_dispatch:
+    inputs:
+      comments:
+        description: 'Comments'
+        required: true
+        default: 'Manual build Actions'
+
+jobs:
+  build-android-ad-hoc:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Getting the repo
+        uses: actions/checkout@v2
+      - name: Installing node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14.17.1'
+      - name: Install React Native CLI
+        run: |
+          yarn global add react-native-cli
+      - name: Install yarn dependencies
+        run: |
+          yarn install
+      - name: Building bundle
+        run: |
+          npx mkdirp android/app/src/main/assets/ && yarn react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res/
+      - name: Build android
+        env:
+          KEYSTORE_ALIAS_PASSPHRASE: ${{ secrets.MYAPP_UPLOAD_KEY_PASSWORD }}
+          KEYSTORE_ALIAS: ${{ secrets.MYAPP_UPLOAD_KEY_ALIAS }}
+          KEYSTORE_PASSPHRASE: ${{ secrets.MYAPP_UPLOAD_STORE_PASSWORD }}
+        run: |
+          export VERSION_CODE=${{ github.run_number }}
+          export VERSION_NAME=1.0.${{ github.run_number }}
+          echo ${{ secrets.MYAPP_UPLOAD_KEYSTORES }} | base64 --decode > android/app/my-upload-key.keystore
+          cd android && chmod +x ./gradlew && ./gradlew clean && ./gradlew -PversCode=$VERSION_CODE -PversName=$VERSION_NAME :app:assemble -x bundleReleaseJsAndAssets
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: artifact
+          path: android/app/build/outputs/apk/release/app-release.apk
+
+  upload-android:
+    needs: build-android-ad-hoc
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: artifact
+      - name: Display structure of downloaded files
+        run: ls -R
+      - name: upload artifact to Firebase App Distribution
+        uses: wzieba/Firebase-Distribution-Github-Action@v1
+        with:
+          appId: ${{secrets.FIREBASE_APP_ID_ANDROID}}
+          token: ${{secrets.FIREBASE_TOKEN}}
+          groups: testers
+          file: app-release.apk

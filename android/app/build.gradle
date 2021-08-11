@@ -131,7 +131,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.rn.firebase"
+        applicationId "com.ancientco.wehv"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

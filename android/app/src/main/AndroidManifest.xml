@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="com.rn.firebase">
+  package="com.ancientco.wehv">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
