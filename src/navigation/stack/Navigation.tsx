@@ -1,7 +1,7 @@
 import { DefaultTheme, NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import React from "react";
-import { LIGHT } from "../../constants";
+import { LIGHT, ROUTES } from "../../constants";
 import { LoginScreen, RegisterScreen, WelcomeScreen } from "../../screens";
 
 interface NavigationProps {}
@@ -24,10 +24,10 @@ const Navigation: React.FC<NavigationProps> = ({}) => {
         screenOptions={{
           headerShown: false,
         }}
-        initialRouteName={"Welcome"}>
-        <Stack.Screen name="Welcome" component={WelcomeScreen} />
-        <Stack.Screen name="SignUp" component={RegisterScreen} />
-        <Stack.Screen name="SignIn" component={LoginScreen} />
+        initialRouteName={ROUTES.welcome}>
+        <Stack.Screen name={ROUTES.welcome} component={WelcomeScreen} />
+        <Stack.Screen name={ROUTES.register} component={RegisterScreen} />
+        <Stack.Screen name={ROUTES.login} component={LoginScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
