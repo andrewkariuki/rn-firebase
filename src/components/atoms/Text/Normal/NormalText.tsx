@@ -8,6 +8,7 @@ interface NormalTextProps {
   color?: string;
   fontStyle?: FontProps;
   textAlign?: textAlignment;
+  marginTop?: number;
 }
 
 const NormalText: React.FC<NormalTextProps> = ({

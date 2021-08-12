@@ -9,4 +9,11 @@ export interface StyleSheetProps {
   fontStyle?: FontProps;
   backgroundColor?: string;
   textAlign?: textAlignment;
+  borderStyle?: BorderStyle;
+}
+
+export interface BorderStyle {
+  borderStyle?: "solid";
+  borderWidth?: number;
+  borderColor?: string;
 }

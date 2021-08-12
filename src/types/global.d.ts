@@ -7,3 +7,5 @@ type textAlignment =
   | "center"
   | "justify"
   | undefined;
+
+type border = "solid" | "dotted" | "dashed" | undefined;

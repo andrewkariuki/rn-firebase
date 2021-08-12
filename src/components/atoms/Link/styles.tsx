@@ -6,5 +6,7 @@ export const style = (styleProps?: StyleSheetProps) =>
     link: {
       color: styleProps?.color ? styleProps.color : LIGHT.blue,
       ...styleProps?.fontStyle,
+      textDecorationLine: "underline",
+      marginStart: 5,
     },
   });

@@ -15,6 +15,7 @@ const WelcomeButtons: React.FC<WelcomeButtonsProps> = ({}) => {
         backgroundColor={LIGHT.white}
         color={LIGHT.textColor}
         borderColor={LIGHT.grey}
+        borderWidth={1}
       />
     </View>
   );

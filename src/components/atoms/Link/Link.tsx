@@ -10,7 +10,7 @@ interface LinkProps {
   underline?: boolean;
   path?: string;
   fontStyle?: FontProps;
-  textAlign?: string;
+  textAlign?: textAlignment;
 }
 
 const Link: React.FC<LinkProps> = ({ text, fontStyle, color, textAlign }) => {

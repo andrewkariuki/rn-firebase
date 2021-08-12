@@ -9,6 +9,7 @@ interface ButtonProps {
   color?: string;
   backgroundColor?: string;
   borderColor?: string;
+  borderWidth?: number;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -17,10 +18,11 @@ const Button: React.FC<ButtonProps> = ({
   color,
   backgroundColor,
   borderColor,
+  borderWidth,
 }) => {
   return (
     <TouchableOpacity
-      style={style(backgroundColor, borderColor).button}
+      style={style(backgroundColor, borderColor, borderWidth).button}
       onPress={onPress}>
       <NormalText text={text} color={color} />
     </TouchableOpacity>

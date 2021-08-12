@@ -1,8 +1,7 @@
 import React from "react";
-import { View } from "react-native";
-import { Heading, NormalText } from "../../atoms";
-import { StyleSheet } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { FONTS, LIGHT } from "../../../constants";
+import { Heading, NormalText } from "../../atoms";
 
 interface WelcomeTextsProps {}
 
@@ -23,6 +22,8 @@ export default WelcomeTexts;
 
 const style = StyleSheet.create({
   welcomeTexts: {
+    alignItems: "center",
+    flexDirection: "column",
     justifyContent: "center",
     width: "100%",
   },

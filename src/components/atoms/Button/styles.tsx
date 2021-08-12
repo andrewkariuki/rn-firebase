@@ -1,6 +1,10 @@
 import { StyleSheet } from "react-native";
 import { LIGHT } from "../../../constants";
-export const style = (backgroundColor?: any, borderColor?: any) =>
+export const style = (
+  backgroundColor?: any,
+  borderColor?: any,
+  borderWidth?: any
+) =>
   StyleSheet.create({
     button: {
       backgroundColor: backgroundColor ? backgroundColor : LIGHT.primaryButton,
@@ -10,7 +14,8 @@ export const style = (backgroundColor?: any, borderColor?: any) =>
       alignItems: "center",
       justifyContent: "center",
       borderStyle: "solid",
-      borderColor: borderColor ? borderColor : null,
+      borderWidth: borderWidth ? borderWidth : undefined,
+      borderColor: borderColor ? borderColor : undefined,
     },
   });
 
