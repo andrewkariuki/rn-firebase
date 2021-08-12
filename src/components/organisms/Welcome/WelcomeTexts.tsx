@@ -8,13 +8,24 @@ interface WelcomeTextsProps {}
 const WelcomeTexts: React.FC<WelcomeTextsProps> = ({}) => {
   return (
     <View style={style.welcomeTexts}>
-      <Heading
-        text="Enjoy the benefits of sharing."
-        fontStyle={FONTS.h1}
-        color={LIGHT.textColor}
-      />
-      <NormalText text="Share your experiences." fontStyle={FONTS.body2} />
-      <NormalText text="Anonymously." fontStyle={FONTS.body2} />
+      <View style={style.inner}>
+        <Heading
+          textAlign="center"
+          text="Enjoy the benefits of sharing."
+          fontStyle={FONTS.h1}
+          color={LIGHT.textColor}
+        />
+        <NormalText
+          textAlign="center"
+          text="Share your experiences."
+          fontStyle={FONTS.body2}
+        />
+        <NormalText
+          textAlign="center"
+          text="Anonymously."
+          fontStyle={FONTS.body2}
+        />
+      </View>
     </View>
   );
 };
@@ -25,6 +36,10 @@ const style = StyleSheet.create({
     alignItems: "center",
     flexDirection: "column",
     justifyContent: "center",
-    width: "100%",
+  },
+  inner: {
+    flexDirection: "column",
+    width: 250,
+    textAlign: "center",
   },
 });

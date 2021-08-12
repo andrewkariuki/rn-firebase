@@ -24,7 +24,7 @@ export default WelcomeButtons;
 
 const style = StyleSheet.create({
   cover: {
-    marginTop: 60,
+    marginTop: 50,
     marginBottom: 30,
   },
 });
