@@ -8,13 +8,23 @@ interface LinkProps {
   navigation?: any;
   color?: string;
   underline?: boolean;
-  path?: string;
+  onPress?: any;
   fontStyle?: FontProps;
   textAlign?: textAlignment;
 }
 
-const Link: React.FC<LinkProps> = ({ text, fontStyle, color, textAlign }) => {
+const Link: React.FC<LinkProps> = ({
+  text,
+  fontStyle,
+  color,
+  textAlign,
+  onPress,
+}) => {
   const styleProps = { fontStyle, color, textAlign };
-  return <Text style={style(styleProps).link}>{text}</Text>;
+  return (
+    <Text style={style(styleProps).link} onPress={onPress}>
+      {text}
+    </Text>
+  );
 };
 export default Link;

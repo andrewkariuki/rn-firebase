@@ -4,9 +4,14 @@ import { Link, NormalText } from "../../atoms";
 import { StyleSheet } from "react-native";
 import { FONTS, LIGHT } from "../../../constants";
 
-interface WelcomeBottomTextProps {}
+interface WelcomeBottomTextProps {
+  navigation?: any;
+}
 
-const WelcomeBottomText: React.FC<WelcomeBottomTextProps> = ({}) => {
+const WelcomeBottomText: React.FC<WelcomeBottomTextProps> = ({
+  navigation,
+}) => {
+  const navigateToSignIn = () => {};
   return (
     <View style={style.cover}>
       <NormalText

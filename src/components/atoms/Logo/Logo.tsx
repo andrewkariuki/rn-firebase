@@ -1,15 +1,17 @@
 import React from "react";
-import { Image, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { WehvLogo } from "../../../constants";
+import { Images } from "../Image";
 
-import { StyleSheet } from "react-native";
-
-interface LogoProps {}
+interface LogoProps {
+  heigh: number;
+  width: number;
+}
 
 const Logo: React.FC<LogoProps> = ({}) => {
   return (
     <View style={styles.cover}>
-      <Image style={styles.logo} source={WehvLogo} />
+      <Images source={WehvLogo} imageStyles={styles.logo} />
     </View>
   );
 };
@@ -21,8 +23,8 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   logo: {
-    height: 200,
-    width: 200,
+    height: 150,
+    width: 150,
     resizeMode: "contain",
   },
 });

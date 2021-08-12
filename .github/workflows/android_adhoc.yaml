@@ -35,7 +35,7 @@ jobs:
         run: |
           export VERSION_CODE=${{ github.run_number }}
           export VERSION_NAME=1.0.${{ github.run_number }}
-          echo ${{ secrets.MYAPP_UPLOAD_KEYSTORES }} | base64 --decode > android/app/my-upload-key.keystore
+          echo  base64 --decode > android/app/my-upload-key.keystore
           cd android && chmod +x ./gradlew && ./gradlew clean && ./gradlew -PversCode=$VERSION_CODE -PversName=$VERSION_NAME :app:assemble -x bundleReleaseJsAndAssets
       - name: Upload Artifact
         uses: actions/upload-artifact@v2

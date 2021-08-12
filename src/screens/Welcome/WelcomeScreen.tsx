@@ -5,7 +5,7 @@ interface WelcomeScreenProps {
   navigation?: any;
 }
 
-const WelcomeScreen: React.FC<WelcomeScreenProps> = ({}) => {
-  return <WelcomeContainer />;
+const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ navigation }) => {
+  return <WelcomeContainer navigation={navigation} />;
 };
 export default WelcomeScreen;

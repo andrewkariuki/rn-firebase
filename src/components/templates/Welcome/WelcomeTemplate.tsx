@@ -8,15 +8,17 @@ import {
 } from "../../organisms";
 import { StyleSheet } from "react-native";
 
-interface WelcomeTemplateProps {}
+interface WelcomeTemplateProps {
+  navigation?: any;
+}
 
-const WelcomeTemplate: React.FC<WelcomeTemplateProps> = ({}) => {
+const WelcomeTemplate: React.FC<WelcomeTemplateProps> = ({ navigation }) => {
   return (
     <View style={styles.cover}>
       <WelcomeLogo />
       <WelcomeTexts />
-      <WelcomeButtons />
-      <WelcomeBottomText />
+      <WelcomeButtons navigation={navigation} />
+      <WelcomeBottomText navigation={navigation} />
     </View>
   );
 };

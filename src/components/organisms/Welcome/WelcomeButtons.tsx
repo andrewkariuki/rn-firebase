@@ -4,13 +4,18 @@ import { LIGHT } from "../../../constants";
 import { Button } from "../../atoms";
 import { StyleSheet } from "react-native";
 
-interface WelcomeButtonsProps {}
+interface WelcomeButtonsProps {
+  navigation?: any;
+}
 
 const WelcomeButtons: React.FC<WelcomeButtonsProps> = ({}) => {
+  const navigateToSignUp = () => {};
+
   return (
     <View style={style.cover}>
       <Button text="Sign up with your email." color={LIGHT.white} />
       <Button
+        onPress={navigateToSignUp()}
         text="Sign up with google."
         backgroundColor={LIGHT.white}
         color={LIGHT.textColor}

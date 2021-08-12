@@ -9,3 +9,7 @@ type textAlignment =
   | undefined;
 
 type border = "solid" | "dotted" | "dashed" | undefined;
+
+type ImageSource = string | {};
+
+type ResizeMode = "cover" | "contain" | "stretch" | "repeat" | "center";
