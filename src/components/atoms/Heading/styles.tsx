@@ -1,10 +1,10 @@
 import { StyleSheet } from "react-native";
-export const style = (fontSize: any) =>
+
+export const style = (fontStyle: any) =>
   StyleSheet.create({
     heading: {
-      fontSize: fontSize,
+      ...fontStyle,
       marginBottom: 18,
       color: "#06040A",
-      fontWeight: "bold",
     },
   });

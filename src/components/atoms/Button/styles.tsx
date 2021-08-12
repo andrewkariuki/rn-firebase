@@ -1,16 +1,17 @@
 import { StyleSheet } from "react-native";
-export default StyleSheet.create({
-  button: {
-    backgroundColor: "#1F0E5F",
-    marginLeft: 30,
-    marginRight: 30,
-    marginTop: 20,
-    height: 48,
-    borderRadius: 5,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  text: {
-    color: "#ffff",
-  },
-});
+import { LIGHT } from "../../../constants";
+export const style = (backgroundColor?: any, borderColor?: any) =>
+  StyleSheet.create({
+    button: {
+      backgroundColor: backgroundColor ? backgroundColor : LIGHT.primaryButton,
+      marginTop: 10,
+      height: 48,
+      borderRadius: 5,
+      alignItems: "center",
+      justifyContent: "center",
+      borderStyle: "solid",
+      borderColor: borderColor ? borderColor : null,
+    },
+  });
+
+// "#1F0E5F"

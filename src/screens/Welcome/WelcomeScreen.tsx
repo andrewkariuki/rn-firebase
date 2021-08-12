@@ -1,11 +1,11 @@
 import React from "react";
-import { View } from "react-native";
+import { WelcomeContainer } from "../../containers";
 
 interface WelcomeScreenProps {
   navigation?: any;
 }
 
 const WelcomeScreen: React.FC<WelcomeScreenProps> = ({}) => {
-  return <View />;
+  return <WelcomeContainer />;
 };
 export default WelcomeScreen;

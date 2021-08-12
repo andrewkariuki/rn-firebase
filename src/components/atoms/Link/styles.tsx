@@ -1,4 +1,10 @@
 import { StyleSheet } from "react-native";
-export default StyleSheet.create({
-  link: { color: "#1F0E5F", fontWeight: "bold", fontSize: 16 },
-});
+import { LIGHT } from "../../../constants";
+import { StyleSheetProps } from "../../../interfaces";
+export const style = (styleProps?: StyleSheetProps) =>
+  StyleSheet.create({
+    link: {
+      color: styleProps?.color ? styleProps.color : LIGHT.blue,
+      ...styleProps?.fontStyle,
+    },
+  });

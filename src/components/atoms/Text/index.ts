@@ -1,3 +1,4 @@
+import NormalText from "./Normal/NormalText";
 import Paragraph from "./Paragraph";
 
-export { Paragraph };
+export { Paragraph, NormalText };

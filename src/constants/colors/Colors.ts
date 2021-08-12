@@ -29,4 +29,6 @@ export const LIGHT = {
   primaryButton: "#3838BA",
 
   tertiary: "#787E8A",
+
+  grey: "#BDBEC2",
 };
