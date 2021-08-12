@@ -9,7 +9,7 @@ interface LogoProps {}
 const Logo: React.FC<LogoProps> = ({}) => {
   return (
     <View style={styles.cover}>
-      <Images style={} source={WehvLogo} resizeMode="contain" />
+      <Image style={styles.logo} source={WehvLogo} />
     </View>
   );
 };
@@ -19,7 +19,10 @@ const styles = StyleSheet.create({
   cover: {
     alignItems: "center",
     justifyContent: "center",
+  },
+  logo: {
     height: 20,
     width: 20,
+    resizeMode: "contain",
   },
 });
