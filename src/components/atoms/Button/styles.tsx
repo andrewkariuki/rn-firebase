@@ -1,9 +1,11 @@
 import { StyleSheet } from "react-native";
 import { LIGHT } from "../../../constants";
+import { FontProps } from "../../../interfaces";
 export const style = (
   backgroundColor?: any,
   borderColor?: any,
-  borderWidth?: any
+  borderWidth?: any,
+  fontStyle?: FontProps
 ) =>
   StyleSheet.create({
     button: {
@@ -16,6 +18,7 @@ export const style = (
       borderStyle: "solid",
       borderWidth: borderWidth ? borderWidth : undefined,
       borderColor: borderColor ? borderColor : undefined,
+      ...fontStyle,
     },
   });
 

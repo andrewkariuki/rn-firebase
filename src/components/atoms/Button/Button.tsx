@@ -1,5 +1,6 @@
 import React from "react";
 import { TouchableOpacity } from "react-native";
+import { FontProps } from "../../../interfaces";
 import { NormalText } from "../Text";
 import { style } from "./styles";
 
@@ -10,6 +11,7 @@ interface ButtonProps {
   backgroundColor?: string;
   borderColor?: string;
   borderWidth?: number;
+  fontStyle?: FontProps;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -19,10 +21,11 @@ const Button: React.FC<ButtonProps> = ({
   backgroundColor,
   borderColor,
   borderWidth,
+  fontStyle,
 }) => {
   return (
     <TouchableOpacity
-      style={style(backgroundColor, borderColor, borderWidth).button}
+      style={style(backgroundColor, borderColor, borderWidth, fontStyle).button}
       onPress={onPress}>
       <NormalText text={text} color={color} />
     </TouchableOpacity>

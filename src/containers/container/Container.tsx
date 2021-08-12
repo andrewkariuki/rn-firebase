@@ -15,5 +15,8 @@ export default Container;
 const style = StyleSheet.create({
   container: {
     padding: 10,
+    backgroundColor: "white",
+    height: "100%",
+    width: "100%",
   },
 });

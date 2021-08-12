@@ -1,18 +1,15 @@
 import { StyleSheet } from "react-native";
-export const style = (errorMessage: any) =>
+import { FontProps } from "../../../interfaces";
+export const style = (fontStyle?: FontProps) =>
   StyleSheet.create({
-    inputCover: { marginBottom: 10, marginLeft: 30, marginRight: 30 },
     input: {
-      height: 48,
-      borderRadius: 5,
+      height: 50,
+      // borderRadius: 5,
       overflow: "hidden",
-      backgroundColor: "white",
+      // backgroundColor: "#D20B0A",
       marginBottom: 2,
-      marginTop: 10,
       paddingLeft: 16,
-      borderColor: errorMessage ? "#D20B0A" : "#1F0E5F",
-      borderWidth: 1,
-      fontSize: 16,
+      ...fontStyle,
     },
     errors: {
       color: "#D20B0A",

@@ -20,7 +20,7 @@ export const FONTS = {
   body2: {
     fontFamily: "TTCommons-Regular",
     fontSize: SIZES.body2,
-    lineHeight: 30,
+    lineHeight: 22,
   },
   body3: {
     fontFamily: "TTCommons-Regular",

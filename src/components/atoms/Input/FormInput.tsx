@@ -1,7 +1,6 @@
 import React from "react";
-import { View } from "react-native";
 import { TextInput } from "react-native-gesture-handler";
-import InputError from "./InputError";
+import { FontProps } from "../../../interfaces";
 import { style } from "./styles";
 
 interface FormInputProps {
@@ -11,6 +10,8 @@ interface FormInputProps {
   secure?: boolean;
   errorMessage?: string;
   errorStyle?: any;
+  fontStyle?: FontProps;
+  selectionColor?: string;
 }
 
 const FormInput: React.FC<FormInputProps> = ({
@@ -18,26 +19,20 @@ const FormInput: React.FC<FormInputProps> = ({
   placeholder,
   secure,
   value,
-  errorStyle,
-  errorMessage,
+  fontStyle,
 }) => {
-  const errors = errorMessage ? (
-    <InputError errorStyle={errorStyle} errorMessage={errorMessage} />
-  ) : null;
   return (
-    <View style={style(errorMessage).inputCover}>
-      <TextInput
-        style={style(errorMessage).input}
-        placeholder={placeholder}
-        onChangeText={(text) => onChangeTextHandler(text)}
-        value={value}
-        secureTextEntry={secure}
-        underlineColorAndroid="transparent"
-        autoCapitalize="none"
-        placeholderTextColor="#06040A"
-      />
-      {errors}
-    </View>
+    <TextInput
+      style={style(fontStyle).input}
+      placeholder={placeholder}
+      onChangeText={(text) => onChangeTextHandler(text)}
+      value={value}
+      secureTextEntry={secure}
+      underlineColorAndroid="transparent"
+      selectionColor="#06040A"
+      autoCapitalize="none"
+      placeholderTextColor="#06040A"
+    />
   );
 };
 export default FormInput;

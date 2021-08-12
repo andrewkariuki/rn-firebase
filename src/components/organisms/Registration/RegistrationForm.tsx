@@ -1,22 +1,24 @@
 import React from "react";
 import { View } from "react-native";
-import { Button, FormInput, Link, Paragraph } from "../../atoms";
-import style from "./styles";
+import { FONTS, GLOBAL, LIGHT } from "../../../constants";
+import { Button, NormalText } from "../../atoms";
+import { FormGroupInput } from "../../molecules";
 
 interface RegistrationFormProps {
   navigation: any;
 }
 
-const RegistrationForm: React.FC<RegistrationFormProps> = ({ navigation }) => {
+const RegistrationForm: React.FC<RegistrationFormProps> = ({}) => {
   return (
     <View>
-      <FormInput placeholder="Email address" />
-      <FormInput placeholder="Password" secure />
-      <Button text="Register" />
-      <View style={style.authCTO}>
-        <Paragraph text="Already got an account?" />
-        <Link text="Log in" navigation={navigation} />
-      </View>
+      <FormGroupInput label={GLOBAL.emailLabel} />
+      <FormGroupInput label={GLOBAL.passwordLabel} />
+      <NormalText text={GLOBAL.passwordRules} fontStyle={FONTS.body3} />
+      <Button
+        text={GLOBAL.register}
+        color={LIGHT.white}
+        fontStyle={FONTS.body1}
+      />
     </View>
   );
 };
