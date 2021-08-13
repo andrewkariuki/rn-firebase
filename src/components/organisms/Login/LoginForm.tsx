@@ -1,8 +1,8 @@
 import { Formik } from "formik";
 import React from "react";
 import { View } from "react-native";
-import { FONTS, GLOBAL, LIGHT } from "../../../constants";
-import { yupAuthSchema } from "../../../utils";
+import { FONTS, GLOBAL, LIGHT, ROUTES } from "../../../constants";
+import { navigateTo, yupAuthSchema } from "../../../utils";
 import { Button, Link } from "../../atoms";
 import { FormGroupInput } from "../../molecules";
 
@@ -36,7 +36,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ navigation }) => {
           <Link
             textAlign="right"
             text={GLOBAL.forgotPassword}
-            navigation={navigation}
+            onPress={() => navigateTo(navigation, ROUTES.resetPassword)}
             color={LIGHT.textColor}
             fontStyle={FONTS.h3}
           />

@@ -1,5 +1,7 @@
 import LoginContainer from "./Login/LoginContainer";
-import ResetPasswordContainer from "./Pasword/ResetPasswordContainer";
+import NewPasswordContainer from "./Password/NewPasswordContainer";
+import ResetPasswordContainer from "./Password/ResetPasswordContainer";
+
 import RegisterContainer from "./Register/RegisterContainer";
 import WelcomeContainer from "./Welcome/WelcomeContainer";
 
@@ -8,4 +10,5 @@ export {
   WelcomeContainer,
   LoginContainer,
   ResetPasswordContainer,
+  NewPasswordContainer,
 };

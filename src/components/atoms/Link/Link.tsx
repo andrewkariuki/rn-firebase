@@ -5,7 +5,6 @@ import { style } from "./styles";
 
 interface LinkProps {
   text?: string;
-  navigation?: any;
   color?: string;
   underline?: boolean;
   onPress?: any;
