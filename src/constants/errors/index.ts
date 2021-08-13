@@ -1,6 +1,6 @@
 export const ERROR_MESSAGES = {
   duplicateEmail: "Email address already exists!",
-  emailNotLongEnough: "Email address must contain at least 3 characters!",
+  emailNotLongEnough: "Email address must contain at least 5 characters!",
   passwordNotLongEnough: "Password must contain at least 8 characters!",
   passwordNoSpecialCharacter: "Password must contain a special character!",
   passwordNoUppercase: "Password must contain an uppercase character!",

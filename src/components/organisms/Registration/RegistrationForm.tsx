@@ -1,7 +1,7 @@
 import { Formik } from "formik";
 import React from "react";
 import { View } from "react-native";
-import { FONTS, GLOBAL, LIGHT } from "../../../constants";
+import { FONTS, GLOBAL, LIGHT, ROUTES } from "../../../constants";
 import { registerUser } from "../../../stores";
 import { yupAuthSchema } from "../../../utils";
 import { Button, NormalText } from "../../atoms";
@@ -11,11 +11,11 @@ interface RegistrationFormProps {
   navigation: any;
 }
 
-const RegistrationForm: React.FC<RegistrationFormProps> = ({}) => {
+const RegistrationForm: React.FC<RegistrationFormProps> = ({ navigation }) => {
   return (
     <Formik
       initialValues={{ email: "", password: "" }}
-      onSubmit={(values) => registerUser(values)}
+      onSubmit={(values) => registerUser(values, navigation, ROUTES.home)}
       validationSchema={yupAuthSchema}>
       {({ handleChange, handleBlur, handleSubmit, values, errors }) => (
         <View>

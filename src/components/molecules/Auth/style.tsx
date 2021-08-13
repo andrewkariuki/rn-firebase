@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
 export const style = StyleSheet.create({
   authHeading: {
-    marginBottom: 20,
+    marginBottom: 15,
     marginTop: 18,
   },
 });

@@ -1,3 +1,4 @@
+import HomeTemplate from "./Home/HomeTemplate";
 import LoginTemplate from "./Login/LoginTemplate";
 import NewPasswordTemplate from "./Password/NewPasswordTemplate";
 import ResetPasswordTemplate from "./Password/ResetPasswordTemplate";
@@ -10,4 +11,5 @@ export {
   WelcomeTemplate,
   ResetPasswordTemplate,
   NewPasswordTemplate,
+  HomeTemplate,
 };

@@ -2,7 +2,11 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { AuthProps } from "../../../interfaces";
 import { auth } from "../../../utils";
 
-export const registerUser = async (values: AuthProps) => {
+export const registerUser = async (
+  values: AuthProps,
+  navigation: any,
+  route: any
+) => {
   let user = null;
   let err = null;
 
@@ -15,10 +19,8 @@ export const registerUser = async (values: AuthProps) => {
     });
 
   if (user && !err) {
-    console.log(user);
-    return user;
+    return navigation.navigate(route);
   } else {
-    console.log(err);
     return err;
   }
 };

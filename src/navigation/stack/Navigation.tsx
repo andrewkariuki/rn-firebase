@@ -3,6 +3,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import React from "react";
 import { LIGHT, ROUTES } from "../../constants";
 import {
+  HomeScreen,
   LoginScreen,
   RegisterScreen,
   ResetPasswordScreen,
@@ -31,6 +32,7 @@ const Navigation: React.FC<NavigationProps> = ({}) => {
           headerShown: false,
         }}
         initialRouteName={ROUTES.welcome}>
+        <Stack.Screen name={ROUTES.home} component={HomeScreen} />
         <Stack.Screen name={ROUTES.welcome} component={WelcomeScreen} />
         <Stack.Screen name={ROUTES.register} component={RegisterScreen} />
         <Stack.Screen name={ROUTES.login} component={LoginScreen} />
