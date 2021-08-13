@@ -69,7 +69,7 @@ const styles = (errors?: any) =>
       display: "flex",
       flexDirection: "row",
       height: 50,
-      backgroundColor: errors ? "#DDAECB" : "#E4E4E4",
+      backgroundColor: errors ? "#DDAECB" : "#E2E2E2",
       borderColor: errors ? "#CD6F79" : undefined,
       borderStyle: errors ? "solid" : undefined,
       borderWidth: errors ? 1 : undefined,
