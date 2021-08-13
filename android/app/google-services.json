@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "817836723386",
+    "firebase_url": "https://wehv-d8f2a-default-rtdb.firebaseio.com",
+    "project_id": "wehv-d8f2a",
+    "storage_bucket": "wehv-d8f2a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:817836723386:android:934070a18e51082ab40683",
+        "android_client_info": {
+          "package_name": "com.ancientco.wehv"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "817836723386-uirj8p89p7tdl67o76kjfnq58i74lt49.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2hD_9B7xSeNIdSua1eJwkTRRszKC-IlQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "817836723386-uirj8p89p7tdl67o76kjfnq58i74lt49.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "817836723386-8j4bv9fsfbltt1umh7vfnalna3ptndni.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ancientco.wehv"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

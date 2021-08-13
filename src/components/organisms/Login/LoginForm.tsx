@@ -2,6 +2,7 @@ import { Formik } from "formik";
 import React from "react";
 import { View } from "react-native";
 import { FONTS, GLOBAL, LIGHT, ROUTES } from "../../../constants";
+import { AuthProvider } from "../../../services";
 import { navigateTo, yupAuthSchema } from "../../../utils";
 import { Button, Link } from "../../atoms";
 import { FormGroupInput } from "../../molecules";
@@ -14,7 +15,12 @@ const LoginForm: React.FC<LoginFormProps> = ({ navigation }) => {
   return (
     <Formik
       initialValues={{ email: "", password: "" }}
-      onSubmit={(values) => console.log(values)}
+      onSubmit={async (values) => {
+        const response = AuthProvider.login(values);
+        if (response) {
+          return navigation.navigate(ROUTES.home);
+        }
+      }}
       validationSchema={yupAuthSchema}>
       {({ handleChange, handleBlur, handleSubmit, values, errors }) => (
         <View>

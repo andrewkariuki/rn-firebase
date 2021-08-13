@@ -21,4 +21,5 @@ export const GLOBAL = {
     "Your new password must be different from the previous one.",
   resetPasswordSubHeader:
     "Enter the email associated with your account and we'll send an email with instructions to reset your password.",
+  shares: "Shares...",
 };
