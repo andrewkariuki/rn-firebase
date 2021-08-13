@@ -3,4 +3,5 @@ export const ROUTES = {
   register: "SignUp",
   login: "SignIn",
   welcome: "Welcome",
+  resetPassword: "ResetPassword",
 };

@@ -1,5 +1,11 @@
 import LoginTemplate from "./Login/LoginTemplate";
+import ResetPasswordTemplate from "./Password/ResetPasswordTemplate";
 import RegisterTemplate from "./Register/RegisterTemplate";
 import WelcomeTemplate from "./Welcome/WelcomeTemplate";
 
-export { RegisterTemplate, LoginTemplate, WelcomeTemplate };
+export {
+  RegisterTemplate,
+  LoginTemplate,
+  WelcomeTemplate,
+  ResetPasswordTemplate,
+};

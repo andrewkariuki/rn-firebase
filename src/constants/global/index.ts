@@ -13,4 +13,8 @@ export const GLOBAL = {
   signIn: "Sign In",
   signUp: "Sign Up",
   forgotPassword: "Forgot your password?",
+  resetPasswordInstructions: "Send me instructions",
+  resetPassword: "Reset Password",
+  resetPasswordSubHeader:
+    "Enter the email associated with your account and we'll send an email with instructions to reset your password.",
 };
