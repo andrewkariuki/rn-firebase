@@ -10,7 +10,7 @@ const shares = [
 ];
 
 const AllStories: React.FC<AllStoriesProps> = ({}) => {
-  const renderItem = ({ item }) => (
+  const renderItem = ({ item }: { item: any }) => (
     <SingleShare shareTitle={item.title} sharedBody={item.body} />
   );
   return (
