@@ -1,4 +1,5 @@
 import { Button } from "./Button";
+import Card from "./Card/Card";
 import { Heading } from "./Heading";
 import { Images } from "./Image";
 import { FormInput } from "./Input";
@@ -16,4 +17,5 @@ export {
   Heading,
   Logo,
   Images,
+  Card,
 };

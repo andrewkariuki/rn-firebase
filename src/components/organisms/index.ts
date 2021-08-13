@@ -1,3 +1,4 @@
+import HeaderBar from "./Header/HeaderBar";
 import LoginForm from "./Login/LoginForm";
 import NewPasswordForm from "./Password/NewPasswordForm";
 import PasswordResetForm from "./Password/PasswordResetForm";
@@ -18,4 +19,5 @@ export {
   RegisterTermsOfUs,
   PasswordResetForm,
   NewPasswordForm,
+  HeaderBar,
 };
