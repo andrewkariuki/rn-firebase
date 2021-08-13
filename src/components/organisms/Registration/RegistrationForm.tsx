@@ -2,6 +2,7 @@ import { Formik } from "formik";
 import React from "react";
 import { View } from "react-native";
 import { FONTS, GLOBAL, LIGHT } from "../../../constants";
+import { registerUser } from "../../../stores";
 import { yupAuthSchema } from "../../../utils";
 import { Button, NormalText } from "../../atoms";
 import { FormGroupInput } from "../../molecules";
@@ -14,7 +15,7 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({}) => {
   return (
     <Formik
       initialValues={{ email: "", password: "" }}
-      onSubmit={(values) => console.log(values)}
+      onSubmit={(values) => registerUser(values)}
       validationSchema={yupAuthSchema}>
       {({ handleChange, handleBlur, handleSubmit, values, errors }) => (
         <View>

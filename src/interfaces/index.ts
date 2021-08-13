@@ -22,3 +22,8 @@ export interface BorderStyle {
   borderWidth?: number;
   borderColor?: string;
 }
+
+export interface AuthProps {
+  email: string;
+  password: string;
+}
