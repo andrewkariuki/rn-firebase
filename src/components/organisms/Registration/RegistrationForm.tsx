@@ -2,6 +2,7 @@ import { Formik } from "formik";
 import React from "react";
 import { View } from "react-native";
 import { FONTS, GLOBAL, LIGHT } from "../../../constants";
+import { yupAuthSchema } from "../../../utils";
 import { Button, NormalText } from "../../atoms";
 import { FormGroupInput } from "../../molecules";
 
@@ -13,21 +14,24 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({}) => {
   return (
     <Formik
       initialValues={{ email: "", password: "" }}
-      onSubmit={(values) => console.log(values)}>
-      {({ handleChange, handleBlur, handleSubmit, values }) => (
+      onSubmit={(values) => console.log(values)}
+      validationSchema={yupAuthSchema}>
+      {({ handleChange, handleBlur, handleSubmit, values, errors }) => (
         <View>
           <FormGroupInput
-            onBlurFunction={() => handleBlur("email")}
+            onBlurFunction={handleBlur("email")}
             value={values.email}
             label={GLOBAL.emailLabel}
-            onChangeTextFunction={() => handleChange("email")}
+            onChangeTextFunction={handleChange("email")}
+            errors={errors.email}
           />
           <FormGroupInput
-            onBlurFunction={() => handleBlur("password")}
+            onBlurFunction={handleBlur("password")}
             value={values.password}
             label={GLOBAL.passwordLabel}
-            onChangeTextFunction={() => handleChange("password")}
+            onChangeTextFunction={handleChange("password")}
             secure
+            errors={errors.password}
           />
           <NormalText text={GLOBAL.passwordRules} fontStyle={FONTS.body3} />
           <Button

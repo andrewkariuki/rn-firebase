@@ -13,6 +13,7 @@ interface FormInputProps {
   selectionColor?: string;
   onBlurFunction?: any;
   onChangeTextFunction?: any;
+  textColor?: string;
 }
 
 const FormInput: React.FC<FormInputProps> = ({
@@ -22,17 +23,19 @@ const FormInput: React.FC<FormInputProps> = ({
   fontStyle,
   onBlurFunction,
   onChangeTextFunction,
+  selectionColor,
+  textColor,
 }) => {
   return (
     <TextInput
-      style={style(fontStyle).input}
+      style={style(textColor, fontStyle).input}
       placeholder={placeholder}
       onChangeText={onChangeTextFunction}
       value={value}
       onBlur={onBlurFunction}
       secureTextEntry={secure}
       underlineColorAndroid="transparent"
-      selectionColor="#06040A"
+      selectionColor={selectionColor ? selectionColor : "#06040A"}
       autoCapitalize="none"
       placeholderTextColor="#06040A"
     />

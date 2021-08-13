@@ -9,6 +9,7 @@ interface FormGroupInputProps {
   onBlurFunction?: any;
   onChangeTextFunction?: any;
   secure?: boolean;
+  errors?: string;
 }
 
 const FormGroupInput: React.FC<FormGroupInputProps> = ({
@@ -17,41 +18,68 @@ const FormGroupInput: React.FC<FormGroupInputProps> = ({
   onBlurFunction,
   onChangeTextFunction,
   secure,
+  errors,
 }) => {
+  const error = errors ? (
+    <View>
+      <NormalText
+        marginTop={2}
+        text={errors}
+        fontStyle={FONTS.body4}
+        color={"#CD6F79"}
+      />
+    </View>
+  ) : null;
   return (
-    <View style={styles.cover}>
-      <View style={styles.label}>
-        <NormalText text={label} fontStyle={FONTS.body2} />
+    <View style={styles().wrapper}>
+      <View style={styles(errors).cover}>
+        <View style={styles(errors).label}>
+          <NormalText
+            color={errors ? "#CD6F79" : undefined}
+            text={label}
+            fontStyle={FONTS.body2}
+          />
+        </View>
+        <View style={styles().input}>
+          <FormInput
+            onBlurFunction={onBlurFunction}
+            onChangeTextFunction={onChangeTextFunction}
+            value={value}
+            secure={secure}
+            selectionColor={errors ? "#CD6F79" : undefined}
+            fontStyle={FONTS.body2}
+          />
+        </View>
       </View>
-      <View style={styles.input}>
-        <FormInput
-          onBlurFunction={onBlurFunction}
-          onChangeTextFunction={onChangeTextFunction}
-          value={value}
-          secure={secure}
-          fontStyle={FONTS.body2}
-        />
-      </View>
+      {error}
     </View>
   );
 };
 export default FormGroupInput;
 
-const styles = StyleSheet.create({
-  cover: {
-    display: "flex",
-    flexDirection: "row",
-    height: 50,
-    backgroundColor: "#E4E4E4",
-    marginBottom: 10,
-    marginTop: 5,
-    borderRadius: 6,
-  },
-  label: {
-    flexBasis: "25%",
-    justifyContent: "center",
-    paddingLeft: 16,
-    marginBottom: 2,
-  },
-  input: { flexBasis: "75%" },
-});
+const styles = (errors?: any) =>
+  StyleSheet.create({
+    wrapper: {
+      display: "flex",
+      flexDirection: "column",
+      marginBottom: 10,
+      marginTop: 5,
+    },
+    cover: {
+      display: "flex",
+      flexDirection: "row",
+      height: 50,
+      backgroundColor: errors ? "#DDAECB" : "#E4E4E4",
+      borderColor: errors ? "#CD6F79" : undefined,
+      borderStyle: errors ? "solid" : undefined,
+      borderWidth: errors ? 1 : undefined,
+      borderRadius: 6,
+    },
+    label: {
+      flexBasis: "25%",
+      justifyContent: "center",
+      paddingLeft: 16,
+      marginBottom: 2,
+    },
+    input: { flexBasis: "75%" },
+  });
