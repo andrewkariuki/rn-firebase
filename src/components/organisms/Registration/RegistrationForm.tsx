@@ -1,3 +1,4 @@
+import { Formik } from "formik";
 import React from "react";
 import { View } from "react-native";
 import { FONTS, GLOBAL, LIGHT } from "../../../constants";
@@ -10,16 +11,34 @@ interface RegistrationFormProps {
 
 const RegistrationForm: React.FC<RegistrationFormProps> = ({}) => {
   return (
-    <View>
-      <FormGroupInput label={GLOBAL.emailLabel} />
-      <FormGroupInput label={GLOBAL.passwordLabel} />
-      <NormalText text={GLOBAL.passwordRules} fontStyle={FONTS.body3} />
-      <Button
-        text={GLOBAL.register}
-        color={LIGHT.white}
-        fontStyle={FONTS.body1}
-      />
-    </View>
+    <Formik
+      initialValues={{ email: "", password: "" }}
+      onSubmit={(values) => console.log(values)}>
+      {({ handleChange, handleBlur, handleSubmit, values }) => (
+        <View>
+          <FormGroupInput
+            onBlurFunction={() => handleBlur("email")}
+            value={values.email}
+            label={GLOBAL.emailLabel}
+            onChangeTextFunction={() => handleChange("email")}
+          />
+          <FormGroupInput
+            onBlurFunction={() => handleBlur("password")}
+            value={values.password}
+            label={GLOBAL.passwordLabel}
+            onChangeTextFunction={() => handleChange("password")}
+            secure
+          />
+          <NormalText text={GLOBAL.passwordRules} fontStyle={FONTS.body3} />
+          <Button
+            onPress={() => handleSubmit()}
+            text={GLOBAL.register}
+            color={LIGHT.white}
+            fontStyle={FONTS.body1}
+          />
+        </View>
+      )}
+    </Formik>
   );
 };
 export default RegistrationForm;

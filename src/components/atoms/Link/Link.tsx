@@ -11,6 +11,7 @@ interface LinkProps {
   onPress?: any;
   fontStyle?: FontProps;
   textAlign?: textAlignment;
+  marginStart?: number;
 }
 
 const Link: React.FC<LinkProps> = ({
@@ -19,8 +20,9 @@ const Link: React.FC<LinkProps> = ({
   color,
   textAlign,
   onPress,
+  marginStart,
 }) => {
-  const styleProps = { fontStyle, color, textAlign };
+  const styleProps = { fontStyle, color, textAlign, marginStart };
   return (
     <Text style={style(styleProps).link} onPress={onPress}>
       {text}

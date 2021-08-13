@@ -1,4 +1,5 @@
 import LoginForm from "./Login/LoginForm";
+import RegisterTermsOfUs from "./Registration/RegisterTermsOfUs";
 import RegistrationForm from "./Registration/RegistrationForm";
 import WelcomeBottomText from "./Welcome/WelcomeBottomText";
 import WelcomeButtons from "./Welcome/WelcomeButtons";
@@ -12,4 +13,5 @@ export {
   WelcomeTexts,
   WelcomeBottomText,
   WelcomeLogo,
+  RegisterTermsOfUs,
 };

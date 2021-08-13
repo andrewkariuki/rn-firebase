@@ -9,6 +9,8 @@ interface NormalTextProps {
   fontStyle?: FontProps;
   textAlign?: textAlignment;
   marginTop?: number;
+  marginLeft?: number;
+  marginRight?: number;
 }
 
 const NormalText: React.FC<NormalTextProps> = ({
@@ -16,8 +18,10 @@ const NormalText: React.FC<NormalTextProps> = ({
   color,
   fontStyle,
   textAlign,
+  marginLeft,
+  marginRight,
 }) => {
-  const styles = { fontStyle, color, textAlign };
+  const styles = { fontStyle, color, textAlign, marginLeft, marginRight };
   return <Text style={style(styles).normal}>{text}</Text>;
 };
 export default NormalText;

@@ -10,6 +10,11 @@ export interface StyleSheetProps {
   backgroundColor?: string;
   textAlign?: textAlignment;
   borderStyle?: BorderStyle;
+  marginTop?: number;
+  marginBottom?: number;
+  marginLeft?: number;
+  marginRight?: number;
+  marginStart?: number;
 }
 
 export interface BorderStyle {

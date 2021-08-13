@@ -24,6 +24,7 @@ const WelcomeBottomText: React.FC<WelcomeBottomTextProps> = ({
         color={LIGHT.textColor}
         fontStyle={FONTS.h3}
         text="Sign In"
+        marginStart={5}
       />
     </View>
   );

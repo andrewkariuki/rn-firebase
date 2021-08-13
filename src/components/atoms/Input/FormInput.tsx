@@ -4,7 +4,6 @@ import { FontProps } from "../../../interfaces";
 import { style } from "./styles";
 
 interface FormInputProps {
-  onChangeTextHandler?: any;
   placeholder?: string;
   value?: string;
   secure?: boolean;
@@ -12,21 +11,25 @@ interface FormInputProps {
   errorStyle?: any;
   fontStyle?: FontProps;
   selectionColor?: string;
+  onBlurFunction?: any;
+  onChangeTextFunction?: any;
 }
 
 const FormInput: React.FC<FormInputProps> = ({
-  onChangeTextHandler,
   placeholder,
   secure,
   value,
   fontStyle,
+  onBlurFunction,
+  onChangeTextFunction,
 }) => {
   return (
     <TextInput
       style={style(fontStyle).input}
       placeholder={placeholder}
-      onChangeText={(text) => onChangeTextHandler(text)}
+      onChangeText={onChangeTextFunction}
       value={value}
+      onBlur={onBlurFunction}
       secureTextEntry={secure}
       underlineColorAndroid="transparent"
       selectionColor="#06040A"
