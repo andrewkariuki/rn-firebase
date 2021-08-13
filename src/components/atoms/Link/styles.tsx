@@ -7,6 +7,7 @@ export const style = (styleProps?: StyleSheetProps) =>
       color: styleProps?.color ? styleProps.color : LIGHT.blue,
       ...styleProps?.fontStyle,
       textDecorationLine: "underline",
+      textAlign: styleProps?.textAlign,
       marginStart: styleProps?.marginStart ? styleProps.marginStart : undefined,
     },
   });

@@ -1,17 +1,15 @@
 import React from "react";
 import { View } from "react-native";
+import { LIGHT, FONTS, GLOBAL, ROUTES } from "../../../constants";
+import { navigateTo } from "../../../utils";
 import { Link, NormalText } from "../../atoms";
 import { StyleSheet } from "react-native";
-import { FONTS, GLOBAL, LIGHT, ROUTES } from "../../../constants";
-import { navigateTo } from "../../../utils";
 
-interface WelcomeBottomTextProps {
+interface LoginBottomTextProps {
   navigation?: any;
 }
 
-const WelcomeBottomText: React.FC<WelcomeBottomTextProps> = ({
-  navigation,
-}) => {
+const LoginBottomText: React.FC<LoginBottomTextProps> = ({ navigation }) => {
   return (
     <View style={style.cover}>
       <NormalText
@@ -20,21 +18,21 @@ const WelcomeBottomText: React.FC<WelcomeBottomTextProps> = ({
         text={GLOBAL.haveAccount}
       />
       <Link
-        onPress={() => navigateTo(navigation, ROUTES.login)}
+        onPress={() => navigateTo(navigation, ROUTES.register)}
         color={LIGHT.textColor}
         fontStyle={FONTS.h3}
-        text={GLOBAL.signIn}
+        text={GLOBAL.signUp}
         marginStart={5}
       />
     </View>
   );
 };
-export default WelcomeBottomText;
-
+export default LoginBottomText;
 const style = StyleSheet.create({
   cover: {
     alignItems: "center",
     flexDirection: "row",
     justifyContent: "center",
+    marginTop: 20,
   },
 });

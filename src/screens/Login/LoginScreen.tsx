@@ -1,11 +1,11 @@
 import React from "react";
-import { LoginTemplate } from "../../components/templates";
+import { LoginContainer } from "../../containers";
 
 interface LoginScreenProps {
   navigation?: any;
 }
 
 const LoginScreen: React.FC<LoginScreenProps> = ({ navigation }) => {
-  return <LoginTemplate navigation={navigation} />;
+  return <LoginContainer navigation={navigation} />;
 };
 export default LoginScreen;
