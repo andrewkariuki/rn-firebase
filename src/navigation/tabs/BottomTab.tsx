@@ -48,7 +48,7 @@ const BottomTab: React.FC<BottomTabProps> = ({}) => {
         options={{
           tabBarButton: (props) => <TabBarCustomButton raised {...props} />,
           tabBarIcon: ({ focused }) => (
-            <TabBarIcon icon={ICONS.SCRIPT} focused={focused} />
+            <TabBarIcon icon={ICONS.CREATE} focused={focused} />
           ),
         }}
       />
