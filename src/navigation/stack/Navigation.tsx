@@ -1,16 +1,16 @@
+import auth from "@react-native-firebase/auth";
 import { DefaultTheme, NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import React from "react";
 import { LIGHT, ROUTES } from "../../constants";
 import {
-  HomeScreen,
   LoginScreen,
   RegisterScreen,
   ResetPasswordScreen,
   WelcomeScreen,
 } from "../../screens";
 import NewPasswordScreen from "../../screens/Password/NewPasswordScreen";
-import auth from "@react-native-firebase/auth";
+import BottomTab from "../tabs/BottomTab";
 
 interface NavigationProps {}
 
@@ -36,7 +36,7 @@ const Navigation: React.FC<NavigationProps> = ({}) => {
         }}>
         {user ? (
           <>
-            <Stack.Screen name={ROUTES.home} component={HomeScreen} />
+            <Stack.Screen name={ROUTES.home} component={BottomTab} />
           </>
         ) : (
           <>

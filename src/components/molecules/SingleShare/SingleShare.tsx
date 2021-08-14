@@ -3,6 +3,7 @@ import { View } from "react-native";
 import { FONTS } from "../../../constants";
 import { truncateString } from "../../../utils";
 import { Card, Heading, NormalText } from "../../atoms";
+import { StyleSheet } from "react-native";
 
 interface SingleShareProps {
   shareTitle?: any;
@@ -15,9 +16,9 @@ const SingleShare: React.FC<SingleShareProps> = ({
   sharedBody,
 }) => {
   return (
-    <View>
+    <View style={styles.cover}>
       <Card>
-        <Heading text={shareTitle} fontStyle={FONTS.h2} />
+        <Heading text={shareTitle} fontStyle={FONTS.h4} />
         <NormalText
           text={sharedBody ? truncateString(sharedBody, 150) : undefined}
         />
@@ -26,3 +27,6 @@ const SingleShare: React.FC<SingleShareProps> = ({
   );
 };
 export default SingleShare;
+const styles = StyleSheet.create({
+  cover: { marginBottom: 5, marginTop: 5 },
+});

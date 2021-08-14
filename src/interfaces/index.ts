@@ -36,3 +36,15 @@ export interface IUpdatePasswordInput {
   password: string;
   confirm: string;
 }
+
+export interface IStory {
+  title: string;
+  body: string;
+  user_id: string;
+}
+
+export interface IComment {
+  body: string;
+  user_id: string;
+  story_id: string;
+}
