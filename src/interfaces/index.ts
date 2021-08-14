@@ -4,6 +4,32 @@ export interface FontProps {
   lineHeight?: number;
 }
 
+export interface IFontStyles {
+  fontFamily?: string;
+  fontSize?: number;
+  lineHeight?: number;
+}
+
+export interface IImageStyles {
+  width?: number;
+  height?: number;
+  resizeMode?: ResizeMode;
+  tintColor?: string;
+}
+
+export interface IStyleSheets {
+  color?: string;
+  fontStyle?: FontProps;
+  backgroundColor?: string;
+  textAlign?: textAlignment;
+  borderStyle?: BorderStyle;
+  marginTop?: number;
+  marginBottom?: number;
+  marginLeft?: number;
+  marginRight?: number;
+  marginStart?: number;
+}
+
 export interface StyleSheetProps {
   color?: string;
   fontStyle?: FontProps;

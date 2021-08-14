@@ -1,10 +1,11 @@
 import React from "react";
 import { Image } from "react-native";
 import { StyleSheet } from "react-native";
+import { IImageStyles } from "../../../interfaces";
 
 interface ImagesProps {
   source: any;
-  imageStyles: any;
+  imageStyles?: IImageStyles;
 }
 
 const Images: React.FC<ImagesProps> = ({ source, imageStyles }) => {
@@ -12,7 +13,7 @@ const Images: React.FC<ImagesProps> = ({ source, imageStyles }) => {
 };
 export default Images;
 
-const styles = (imageStyles: any) =>
+const styles = (imageStyles?: IImageStyles) =>
   StyleSheet.create({
     image: { ...imageStyles },
   });

@@ -1,9 +1,15 @@
 import React from "react";
-import { View } from "react-native";
+import { StyleSheet, TouchableOpacity } from "react-native";
 
 interface HeaderBarLeftProps {}
 
 const HeaderBarLeft: React.FC<HeaderBarLeftProps> = ({ children }) => {
-  return <View>{children}</View>;
+  return (
+    <TouchableOpacity style={styles.HeaderBarLeft}>{children}</TouchableOpacity>
+  );
 };
 export default HeaderBarLeft;
+
+const styles = StyleSheet.create({
+  HeaderBarLeft: { width: 50, justifyContent: "center" },
+});

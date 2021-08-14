@@ -8,9 +8,19 @@ interface HeadingProps {
   fontStyle?: FontProps;
   color?: string;
   textAlign?: textAlignment;
+  marginBottom?: number;
 }
 
-const Heading: React.FC<HeadingProps> = ({ text, fontStyle, textAlign }) => {
-  return <Text style={style(fontStyle, textAlign).heading}>{text}</Text>;
+const Heading: React.FC<HeadingProps> = ({
+  text,
+  fontStyle,
+  textAlign,
+  marginBottom,
+}) => {
+  return (
+    <Text style={style(fontStyle, textAlign, marginBottom).heading}>
+      {text}
+    </Text>
+  );
 };
 export default Heading;
