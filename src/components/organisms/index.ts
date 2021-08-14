@@ -4,6 +4,7 @@ import NewPasswordForm from "./Password/NewPasswordForm";
 import PasswordResetForm from "./Password/PasswordResetForm";
 import RegisterTermsOfUs from "./Registration/RegisterTermsOfUs";
 import RegistrationForm from "./Registration/RegistrationForm";
+import ShareForm from "./Share/ShareForm";
 import AllStories from "./Stories/AllStories";
 import WelcomeBottomText from "./Welcome/WelcomeBottomText";
 import WelcomeButtons from "./Welcome/WelcomeButtons";
@@ -22,4 +23,5 @@ export {
   NewPasswordForm,
   HeaderBar,
   AllStories,
+  ShareForm,
 };

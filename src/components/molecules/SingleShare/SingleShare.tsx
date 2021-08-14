@@ -18,7 +18,7 @@ const SingleShare: React.FC<SingleShareProps> = ({
   return (
     <View style={styles.cover}>
       <Card>
-        <Heading marginBottom={10} text={shareTitle} fontStyle={FONTS.h4} />
+        <Heading marginBottom={1} text={shareTitle} fontStyle={FONTS.h2} />
         <NormalText
           text={sharedBody ? truncateString(sharedBody, 150) : undefined}
         />
