@@ -3,8 +3,9 @@ import React from "react";
 import CustomTabBar from "./CustomTabBar";
 import { StyleSheet } from "react-native";
 import { HomeScreen } from "../../screens";
-import { ROUTES } from "../../constants";
-import { TabBarCustomButton } from "../../components/atoms";
+import { ICONS, ROUTES } from "../../constants";
+import { TabBarCustomButton, TabBarIcon } from "../../components/atoms";
+import { HeaderBar } from "../../components/organisms";
 
 interface BottomTabProps {}
 
@@ -15,13 +16,48 @@ const BottomTab: React.FC<BottomTabProps> = ({}) => {
     <Tab.Navigator
       screenOptions={{
         tabBarStyle: styles.TabNavigator,
+        tabBarShowLabel: false,
+        header: ({ navigation, route, options }) => {
+          return (
+            <HeaderBar
+              navigation={navigation}
+              route={route}
+              options={options}
+            />
+          );
+        },
       }}
-      initialRouteName={ROUTES.home}
+      initialRouteName={ROUTES.stories}
       tabBar={(props) => <CustomTabBar props={props} />}>
       <Tab.Screen
-        name={ROUTES.home}
+        name={ROUTES.stories}
         component={HomeScreen}
-        options={{ tabBarButton: (props) => <TabBarCustomButton {...props} /> }}
+        options={{
+          tabBarButton: (props) => <TabBarCustomButton {...props} />,
+          tabBarIcon: ({ focused }) => (
+            <TabBarIcon icon={ICONS.HOME} focused={focused} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name={ROUTES.share}
+        component={HomeScreen}
+        options={{
+          tabBarButton: (props) => <TabBarCustomButton raised {...props} />,
+          tabBarIcon: ({ focused }) => (
+            <TabBarIcon icon={ICONS.SCRIPT} focused={focused} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name={ROUTES.settings}
+        component={HomeScreen}
+        options={{
+          tabBarButton: (props) => <TabBarCustomButton {...props} />,
+          tabBarIcon: ({ focused }) => (
+            <TabBarIcon icon={ICONS.SETTINGS} focused={focused} />
+          ),
+        }}
       />
     </Tab.Navigator>
   );

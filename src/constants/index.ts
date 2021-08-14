@@ -4,5 +4,6 @@ import { FONTS } from "./fonts/Fonts";
 import { WehvLogo } from "./images/Images";
 import { SIZES } from "./sizes/Sizes";
 import { GLOBAL } from "./global";
+import { ICONS } from "./icons";
 
-export { DARK, LIGHT, SIZES, FONTS, WehvLogo, ROUTES, GLOBAL };
+export { DARK, LIGHT, SIZES, FONTS, WehvLogo, ROUTES, GLOBAL, ICONS };

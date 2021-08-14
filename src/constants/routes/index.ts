@@ -5,4 +5,8 @@ export const ROUTES = {
   welcome: "Welcome",
   resetPassword: "ResetPassword",
   newPassword: "NewPassword",
+  stories: "Stories",
+  settings: "Settings",
+  user: "User",
+  share: "Share",
 };

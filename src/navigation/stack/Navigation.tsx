@@ -27,7 +27,7 @@ const theme = {
 // initialRouteName={ROUTES.welcome}
 const Navigation: React.FC<NavigationProps> = ({}) => {
   const user = auth().currentUser;
-  console.log(user);
+
   return (
     <NavigationContainer theme={theme}>
       <Stack.Navigator

@@ -12,6 +12,8 @@ export const DARK = {
   primaryButton: "#3838BA",
 
   tertiary: "#9C6E55",
+
+  white: "#FFFFFF",
 };
 
 export const LIGHT = {

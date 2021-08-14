@@ -6,6 +6,7 @@ import { FormInput } from "./Input";
 import { Link } from "./Link";
 import { Logo } from "./Logo";
 import TabBarCustomButton from "./Tab/TabBarCustomButton";
+import TabBarIcon from "./Tab/TabBarIcon";
 
 import { NormalText, Paragraph } from "./Text";
 
@@ -20,4 +21,5 @@ export {
   Images,
   Card,
   TabBarCustomButton,
+  TabBarIcon,
 };

@@ -1,7 +1,7 @@
 import React from "react";
 import { Image } from "react-native";
 import { StyleSheet } from "react-native";
-import { LIGHT } from "../../../constants";
+import { DARK, LIGHT } from "../../../constants";
 
 interface TabBarIconProps {
   focused?: any;
@@ -20,6 +20,6 @@ const styles = (focused: any) =>
     icon: {
       width: 25,
       height: 25,
-      tintColor: focused ? LIGHT.primaryButton : LIGHT.secondaryColor,
+      tintColor: focused ? DARK.white : LIGHT.primaryButton,
     },
   });
