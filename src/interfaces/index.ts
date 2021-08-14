@@ -27,3 +27,12 @@ export interface AuthProps {
   email: string;
   password: string;
 }
+
+export interface IUser {
+  uid?: string;
+  email?: string;
+}
+export interface IUpdatePasswordInput {
+  password: string;
+  confirm: string;
+}

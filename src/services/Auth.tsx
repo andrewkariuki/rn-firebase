@@ -1,11 +1,12 @@
 import auth from "@react-native-firebase/auth";
-import { AuthProps } from "../interfaces";
+import { AuthProps, IUpdatePasswordInput, IUser } from "../interfaces";
 
 class AuthService {
   register = async (values: AuthProps) => {
     await auth()
       .createUserWithEmailAndPassword(values.email, values.password)
       .then((user) => {
+        user.user.sendEmailVerification();
         return user;
       })
       .catch((error) => {
@@ -38,6 +39,33 @@ class AuthService {
       .then(() => {
         return true;
       });
+  };
+
+  passwordReset = (values: IUpdatePasswordInput) => {
+    const user = auth().currentUser;
+    if (user) {
+      user
+        .updatePassword(values.password)
+        .then(() => {
+          return true;
+        })
+        .catch((error) => {
+          return error;
+        });
+    }
+  };
+
+  sendPasswordReset = (values: IUser) => {
+    if (values.email) {
+      auth()
+        .sendPasswordResetEmail(values.email)
+        .then(() => {
+          return true;
+        })
+        .catch((error) => {
+          return error;
+        });
+    }
   };
 }
 

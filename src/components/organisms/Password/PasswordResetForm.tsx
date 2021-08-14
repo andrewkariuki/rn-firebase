@@ -2,6 +2,7 @@ import { Formik } from "formik";
 import React from "react";
 import { View } from "react-native";
 import { FONTS, GLOBAL, LIGHT } from "../../../constants";
+import { AuthProvider } from "../../../services";
 import { yupAuthSchema } from "../../../utils";
 import { Button } from "../../atoms";
 import { FormGroupInput } from "../../molecules";
@@ -12,7 +13,7 @@ const PasswordResetForm: React.FC<PasswordResetFormProps> = ({}) => {
   return (
     <Formik
       initialValues={{ email: "" }}
-      onSubmit={(values) => console.log(values)}
+      onSubmit={(values) => AuthProvider.sendPasswordReset(values)}
       validationSchema={yupAuthSchema}>
       {({ handleChange, handleBlur, handleSubmit, values, errors }) => (
         <View>
