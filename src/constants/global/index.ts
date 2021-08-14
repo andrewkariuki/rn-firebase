@@ -22,4 +22,5 @@ export const GLOBAL = {
   resetPasswordSubHeader:
     "Enter the email associated with your account and we'll send an email with instructions to reset your password.",
   stories: "Stories",
+  title: "Title",
 };

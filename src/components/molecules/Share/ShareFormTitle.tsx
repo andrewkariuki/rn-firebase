@@ -20,28 +20,45 @@ const ShareFormTitle: React.FC<ShareFormTitleProps> = ({
   secure,
   errors,
 }) => {
+  const error = errors ? (
+    <View>
+      <NormalText
+        marginTop={2}
+        text={errors}
+        fontStyle={FONTS.body3}
+        color={"#CD6F79"}
+      />
+    </View>
+  ) : null;
   return (
-    <View style={styles().wrapper}>
-      <View>
-        <View>{/* <Images />  */}</View>
-        <View style={styles(errors).label}>
-          <NormalText
-            color={errors ? "#CD6F79" : undefined}
-            text={label}
+    <View style={styles().cover}>
+      <View style={styles().wrapper}>
+        <View style={styles().labelWrapper}>
+          <View>{/* <Images />  */}</View>
+          <View style={styles(errors).label}>
+            <NormalText
+              color={errors ? "#CD6F79" : undefined}
+              text={label}
+              fontStyle={FONTS.h3}
+            />
+          </View>
+        </View>
+        <View style={styles().input}>
+          <FormInput
+            onBlurFunction={onBlurFunction}
+            onChangeTextFunction={onChangeTextFunction}
+            value={value}
+            secure={secure}
+            height={80}
+            maxLength={150}
+            numberOfLines={4}
+            multiline
+            selectionColor={errors ? "#CD6F79" : undefined}
             fontStyle={FONTS.body2}
           />
         </View>
       </View>
-      <View style={styles().input}>
-        <FormInput
-          onBlurFunction={onBlurFunction}
-          onChangeTextFunction={onChangeTextFunction}
-          value={value}
-          secure={secure}
-          selectionColor={errors ? "#CD6F79" : undefined}
-          fontStyle={FONTS.body2}
-        />
-      </View>
+      {error}
     </View>
   );
 };
@@ -49,12 +66,11 @@ export default ShareFormTitle;
 
 const styles = (errors?: any) =>
   StyleSheet.create({
+    cover: { marginBottom: 10, marginTop: 5 },
     wrapper: {
       display: "flex",
-      flexDirection: "row",
-      marginBottom: 10,
-      marginTop: 5,
-      height: 200,
+      flexDirection: "column",
+      height: 150,
       backgroundColor: errors ? "#DDAECB" : "#E2E2E2",
       borderColor: errors ? "#CD6F79" : undefined,
       borderStyle: errors ? "solid" : undefined,
@@ -63,7 +79,15 @@ const styles = (errors?: any) =>
     },
     label: {
       paddingLeft: 16,
-      marginBottom: 2,
     },
-    input: {},
+    input: {
+      width: "auto",
+      height: "auto",
+    },
+    labelWrapper: {
+      display: "flex",
+      flexDirection: "row",
+      paddingTop: 10,
+      paddingBottom: 5,
+    },
   });

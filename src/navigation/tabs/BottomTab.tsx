@@ -18,6 +18,7 @@ const BottomTab: React.FC<BottomTabProps> = ({}) => {
       screenOptions={{
         tabBarStyle: styles.TabNavigator,
         tabBarShowLabel: false,
+        tabBarHideOnKeyboard: true,
         header: ({ navigation, route, options }) => {
           const title = getHeaderTitle(options, route.name);
           return (

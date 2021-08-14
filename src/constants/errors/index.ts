@@ -16,4 +16,7 @@ export const ERROR_MESSAGES = {
   expiredKeyError: "Error! Your password reset key has expired.",
   keyError: "Error! Restart your reset password process.",
   passwordsDoNotMatch: "Passwords do not match.",
+  titleNotLongEnough: "Titles must be longer than 3 characters.",
+  titleLongEnough: "Titles can not be longer than 150 characters.",
+  bodyNotLongEnough: "StoryBodies must be longer than 255 characters.",
 };

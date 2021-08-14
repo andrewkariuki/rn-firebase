@@ -24,3 +24,12 @@ export const validateFirstName = yup
 export const validateLastName = yup
   .string()
   .min(2, ERROR_MESSAGES.lastNameNotLongEnough);
+
+export const validateStoryTitle = yup
+  .string()
+  .min(3, ERROR_MESSAGES.titleNotLongEnough)
+  .max(150, ERROR_MESSAGES.titleLongEnough);
+
+export const validateStoryBody = yup
+  .string()
+  .min(5, ERROR_MESSAGES.bodyNotLongEnough);

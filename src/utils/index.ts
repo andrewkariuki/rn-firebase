@@ -2,5 +2,13 @@ import { auth, db } from "./firebase/functions";
 import { navigateTo } from "./navigation";
 import { truncateString } from "./truncate";
 import { yupAuthSchema } from "./yup/auth";
+import { yupStoriesSchema } from "./yup/stories";
 
-export { auth, db, navigateTo, yupAuthSchema, truncateString };
+export {
+  yupStoriesSchema,
+  auth,
+  db,
+  navigateTo,
+  yupAuthSchema,
+  truncateString,
+};
