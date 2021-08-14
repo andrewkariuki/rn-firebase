@@ -2,7 +2,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import React from "react";
 import CustomTabBar from "./CustomTabBar";
 import { StyleSheet } from "react-native";
-import { HomeScreen } from "../../screens";
+import { CreateScreen, HomeScreen } from "../../screens";
 import { ICONS, ROUTES } from "../../constants";
 import { TabBarCustomButton, TabBarIcon } from "../../components/atoms";
 import { HeaderBar } from "../../components/organisms";
@@ -44,7 +44,7 @@ const BottomTab: React.FC<BottomTabProps> = ({}) => {
       />
       <Tab.Screen
         name={ROUTES.share}
-        component={HomeScreen}
+        component={CreateScreen}
         options={{
           tabBarButton: (props) => <TabBarCustomButton raised {...props} />,
           tabBarIcon: ({ focused }) => (

@@ -1,3 +1,4 @@
+import CreateScreen from "./Create/CreateScreen";
 import HomeScreen from "./Home";
 import LoginScreen from "./Login/LoginScreen";
 import ResetPasswordScreen from "./Password/ResetPasswordScreen";
@@ -10,4 +11,5 @@ export {
   LoginScreen,
   WelcomeScreen,
   ResetPasswordScreen,
+  CreateScreen,
 };
