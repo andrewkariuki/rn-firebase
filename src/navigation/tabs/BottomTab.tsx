@@ -6,6 +6,7 @@ import { HomeScreen } from "../../screens";
 import { ICONS, ROUTES } from "../../constants";
 import { TabBarCustomButton, TabBarIcon } from "../../components/atoms";
 import { HeaderBar } from "../../components/organisms";
+import { getHeaderTitle } from "@react-navigation/elements";
 
 interface BottomTabProps {}
 
@@ -18,8 +19,10 @@ const BottomTab: React.FC<BottomTabProps> = ({}) => {
         tabBarStyle: styles.TabNavigator,
         tabBarShowLabel: false,
         header: ({ navigation, route, options }) => {
+          const title = getHeaderTitle(options, route.name);
           return (
             <HeaderBar
+              title={title}
               navigation={navigation}
               route={route}
               options={options}
