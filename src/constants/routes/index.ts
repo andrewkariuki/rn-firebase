@@ -9,4 +9,5 @@ export const ROUTES = {
   settings: "Settings",
   user: "User",
   share: "Share",
+  story: "Story",
 };

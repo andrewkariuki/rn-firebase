@@ -3,13 +3,15 @@ import { HomeTemplate } from "../../components/templates";
 import Container from "../container/Container";
 import SafeAreaViewContainer from "../container/SafeAreaViewContainer";
 
-interface HomeContainerProps {}
+interface HomeContainerProps {
+  navigation?: any;
+}
 
-const HomeContainer: React.FC<HomeContainerProps> = ({}) => {
+const HomeContainer: React.FC<HomeContainerProps> = ({ navigation }) => {
   return (
     <SafeAreaViewContainer>
       <Container>
-        <HomeTemplate />
+        <HomeTemplate navigation={navigation} />
       </Container>
     </SafeAreaViewContainer>
   );

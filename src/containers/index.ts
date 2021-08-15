@@ -4,6 +4,7 @@ import NewPasswordContainer from "./Password/NewPasswordContainer";
 import ResetPasswordContainer from "./Password/ResetPasswordContainer";
 
 import RegisterContainer from "./Register/RegisterContainer";
+import StoryContainer from "./Story/StoryContainer";
 import WelcomeContainer from "./Welcome/WelcomeContainer";
 
 export {
@@ -13,4 +14,5 @@ export {
   ResetPasswordContainer,
   NewPasswordContainer,
   HomeContainer,
+  StoryContainer,
 };

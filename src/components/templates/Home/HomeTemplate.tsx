@@ -3,12 +3,14 @@ import { View } from "react-native";
 import { AllStories } from "../../organisms";
 import { StyleSheet } from "react-native";
 
-interface HomeTemplateProps {}
+interface HomeTemplateProps {
+  navigation?: any;
+}
 
-const HomeTemplate: React.FC<HomeTemplateProps> = ({}) => {
+const HomeTemplate: React.FC<HomeTemplateProps> = ({ navigation }) => {
   return (
     <View style={styles.HomeTemplate}>
-      <AllStories />
+      <AllStories navigation={navigation} />
     </View>
   );
 };

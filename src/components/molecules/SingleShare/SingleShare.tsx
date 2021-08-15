@@ -9,15 +9,17 @@ interface SingleShareProps {
   shareTitle?: any;
   sharedBody?: any;
   shareId?: any;
+  onPress?: any;
 }
 
 const SingleShare: React.FC<SingleShareProps> = ({
   shareTitle,
   sharedBody,
+  onPress,
 }) => {
   return (
     <View style={styles.cover}>
-      <Card>
+      <Card onCardPress={onPress}>
         <Heading marginBottom={1} text={shareTitle} fontStyle={FONTS.h2} />
         <NormalText
           text={sharedBody ? truncateString(sharedBody, 150) : undefined}

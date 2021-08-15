@@ -7,9 +7,11 @@ import {
   LoginScreen,
   RegisterScreen,
   ResetPasswordScreen,
+  StoryScreen,
   WelcomeScreen,
 } from "../../screens";
 import NewPasswordScreen from "../../screens/Password/NewPasswordScreen";
+
 import BottomTab from "../tabs/BottomTab";
 
 interface NavigationProps {}
@@ -37,6 +39,7 @@ const Navigation: React.FC<NavigationProps> = ({}) => {
         {user ? (
           <>
             <Stack.Screen name={ROUTES.home} component={BottomTab} />
+            <Stack.Screen name={ROUTES.story} component={StoryScreen} />
           </>
         ) : (
           <>

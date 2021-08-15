@@ -1,13 +1,19 @@
 import React from "react";
 import { FlatList } from "react-native";
-import { DATA } from "../../../constants";
+import { DATA, ROUTES } from "../../../constants";
 import SingleShare from "../../molecules/SingleShare/SingleShare";
 
-interface AllStoriesProps {}
+interface AllStoriesProps {
+  navigation: any;
+}
 
-const AllStories: React.FC<AllStoriesProps> = ({}) => {
+const AllStories: React.FC<AllStoriesProps> = ({ navigation }) => {
   const renderItem = ({ item }: { item: any }) => (
-    <SingleShare shareTitle={item.title} sharedBody={item.body} />
+    <SingleShare
+      onPress={() => navigation.navigate(ROUTES.story, { item })}
+      shareTitle={item.title}
+      sharedBody={item.body}
+    />
   );
   return (
     <FlatList

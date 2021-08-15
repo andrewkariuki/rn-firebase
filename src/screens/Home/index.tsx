@@ -2,12 +2,14 @@ import React from "react";
 import { SafeAreaView } from "react-native";
 import { HomeContainer } from "../../containers";
 
-interface HomeScreenProps {}
+interface HomeScreenProps {
+  navigation?: any;
+}
 
-const HomeScreen: React.FC<HomeScreenProps> = ({}) => {
+const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
   return (
     <SafeAreaView>
-      <HomeContainer />
+      <HomeContainer navigation={navigation} />
     </SafeAreaView>
   );
 };

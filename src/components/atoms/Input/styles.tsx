@@ -10,8 +10,4 @@ export const style = (textColor?: any, fontStyle?: FontProps, height?: any) =>
       paddingLeft: 16,
       ...fontStyle,
     },
-    errors: {
-      color: "#D20B0A",
-      fontSize: 12,
-    },
   });

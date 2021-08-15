@@ -32,14 +32,14 @@ const ShareFormTitle: React.FC<ShareFormTitleProps> = ({
   ) : null;
   return (
     <View style={styles().cover}>
-      <View style={styles().wrapper}>
+      <View style={styles(errors).wrapper}>
         <View style={styles().labelWrapper}>
           <View>{/* <Images />  */}</View>
           <View style={styles(errors).label}>
             <NormalText
               color={errors ? "#CD6F79" : undefined}
               text={label}
-              fontStyle={FONTS.h3}
+              fontStyle={FONTS.h2}
             />
           </View>
         </View>
@@ -49,7 +49,8 @@ const ShareFormTitle: React.FC<ShareFormTitleProps> = ({
             onChangeTextFunction={onChangeTextFunction}
             value={value}
             secure={secure}
-            height={80}
+            height={125}
+            textColor={errors ? "#CD6F79" : undefined}
             maxLength={150}
             numberOfLines={4}
             multiline
